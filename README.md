@@ -2,7 +2,7 @@
 Addon for WoW 1.12 so you easy can insert all guild members into a Google sheet.  
 
 ### Where do I find the data I need ?
-\WoW Folder\WTF\Account\[ACCOUNT NAME]\[SERVER NAME]\[CHARACTER NAME]\SavedVariables\GuildList.lua
+\WoW Folder\WTF\Account\\[ACCOUNT NAME]\\[SERVER NAME]\\[CHARACTER NAME]\SavedVariables\GuildList.lua
 
 ### How to use in Google Sheet ?
 Where you want the list to be you just add:  
