@@ -1,0 +1,14 @@
+## Interface: 11200
+## Title: GuildList
+## Author: Subby
+## Notes: Stores a list of guild members and their rank.
+## Version: 0.1
+## X-Date: 2025-12-02
+## X-Website: 
+## DefaultState: enabled
+## Dependencies: 
+## OptionalDeps: 
+## SavedVariables: 
+## SavedVariablesPerCharacter: GuildListDB
+
+GuildList.lua
