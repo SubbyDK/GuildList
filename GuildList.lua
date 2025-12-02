@@ -19,10 +19,10 @@ local function GuildList_Update()
     local members = {}
 
     for i = 1, numMembers do
-        local name, rank, rankIndex, _, class, _, _, officernote = GetGuildRosterInfo(i)
+        local name, rank, rankIndex, level, class, _, _, officernote = GetGuildRosterInfo(i)
 
         -- Base line: Name,Rank,Class
-        local line = name .. "," .. rank .. "," .. class
+        local line = name .. "," .. rank .. "," .. class .. "," .. level
 
         -- Add officer note only for "Alt" ranks if visible
         if (string.find(rank, "Alt")) and (officernote) and (officernote ~= "") then
