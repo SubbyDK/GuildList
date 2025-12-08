@@ -24,10 +24,24 @@ local function GuildList_Update()
         -- Base line: Name,Rank,Class
         local line = name .. "," .. rank .. "," .. class .. "," .. level
 
-        -- Add officer note only for "Alt" ranks if visible
-        if (string.find(rank, "Alt")) and (officernote) and (officernote ~= "") then
-            line = line .. "," .. officernote
+        -- Add officer note
+        if (officernote) then
+            if (officernote ~= "") then
+                line = line .. "," .. officernote
+            else
+                line = line .. "," .. "-"
+            end
         end
+
+        -- 
+        years, months, days, hours = GetGuildRosterLastOnline(i);
+        -- Anoter way to write (if x then x else y end)
+        years, months, days, hours = years and years or 0, months and months or 0, days and days or 0, hours and hours or 0;
+        -- Get the total days offline.
+        DaysOffline = (((((years * 12) + months) * 30.5 + days) * 24 + hours) / 24);
+
+        -- Add days offline
+        line = line .. "," .. math.floor(DaysOffline)
 
         table.insert(members, {name = name, rankIndex = rankIndex or 99, line = line})
     end
@@ -46,7 +60,7 @@ local function GuildList_Update()
     for _, m in ipairs(members) do
         table.insert(csv, m.line)
     end
-    GuildListDB.membersCSV = table.concat(csv, "-")
+    GuildListDB.membersCSV = table.concat(csv, "*")
 end
 
 -- ====================================================================================================
