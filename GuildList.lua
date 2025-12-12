@@ -55,7 +55,7 @@ local function GuildList_Update()
         end
     end)
 
-    -- Concatenate lines with "-" separator
+    -- Concatenate lines with "*" separator
     local csv = {}
     for _, m in ipairs(members) do
         table.insert(csv, m.line)
@@ -67,7 +67,10 @@ end
 -- Delay execution until roster data is available
 -- ====================================================================================================
 f:SetScript("OnUpdate", function()
-    if ((LogInTime + 30) < GetTime()) and (Stop == false) then
+    if ((LogInTime + 5) < GetTime()) and (Stop == false) then
+        GuildRoster()
+        Stop = "Almost"
+    elseif ((LogInTime + 60) < GetTime()) and (Stop == "Almost") then
         GuildList_Update()
         Stop = true
     end
