@@ -12,3 +12,9 @@ And the data from the addon will be added in H2 (or where ever you prefeer)
 ### Why would I ever want to use this ?
 No idea, I use it to easy make a list in the sheet we need.  
 If you don't know why, then don't install. ;)
+
+---
+
+## 📄 License
+
+MIT License — do what you want with it. Credits appreciated but not required.
